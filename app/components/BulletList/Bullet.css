@@ -1,0 +1,7 @@
+/* Add this to your global CSS or component-specific styling */
+.bullet {
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em; /* Adjust the spacing as needed */
+  font-size: 1.2em;
+}
