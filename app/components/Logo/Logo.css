@@ -1,0 +1,12 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg); /* 2 full spins */
+  }
+}
+
+.spin-animation:hover {
+  animation: spin 0.7s ease-in-out;
+}
