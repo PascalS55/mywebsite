@@ -30,7 +30,7 @@ const SlideIn = ({ children, direction = "left", height = "auto" }) => {
       }}
       className={` ${
         direction === "left" ? "left-0" : "right-0"
-      } h-full w-full bg-light px-32 border-t-2 border-dark overflow-y-auto`}
+      } h-full w-full bg-light px-32 border-t-2 border-dark overflow-y-auto xl:px-16 lg:px-10 md:px-10 sm:px-2 xs:px-0`}
       style={{ height: height }}
     >
       {children}

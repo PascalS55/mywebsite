@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import qualimePic from "../../public/Images/mobile_app.png";
-import websitePic from "../../public/Images/website2.png";
-import sciencePic from "../../public/Images/science.png";
 import rpiLampPic from "../../public/Images/rpi_lamp.png";
 import rpiWater from "../../public/Images/rpi_water1_bg.png";
+import sciencePic from "../../public/Images/science.png";
+import websitePic from "../../public/Images/website2.png";
 import BulletList from "../components/BulletList/BulletList";
 import FlipCard from "../components/FlipCard";
 import Layout from "../components/Layout";
@@ -21,20 +21,22 @@ const FeaturedProject = ({
   img,
   link = "",
 }) => {
-  // change project class, not suiting for my needs
-  // should be image, summary, title, Link optional; focus on dscription, nice text representation
-  //   also show brief summary of projects on home, with link to this page
   return (
-    <article className="w-3/5 h-full flex items-center justify-between rounded-3xl lg:flex-col lg:p-8 xs:rounded-2xl">
+    <article className="w-3/5 xl:w-5/6 lg:w-full">
       <FlipCard
         frontSide={
-          <div className="flex">
-            <div className="w-1/2 flex flex-col self-start items-start justify-between pl-6">
+          <div className="flex lg:flex-col-reverse">
+            <div
+              className="w-1/2 flex flex-col self-start items-start justify-between pl-6
+              lg:w-full lg:pl-0 lg:pt-6"
+            >
               <div>
-                <span className="text-primary text-xl font-medium">{type}</span>
+                <span className="text-primary text-xl font-medium xs:text-base">
+                  {type}
+                </span>
                 {link === "" ? (
                   <div className="hover:underline underline-offset-2 cursor-default">
-                    <h2 className="my-2 w-full text-left text-4xl font-bold">
+                    <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-sm">
                       {title}
                     </h2>
                   </div>
@@ -44,7 +46,7 @@ const FeaturedProject = ({
                     target="_blank"
                     href={link}
                   >
-                    <h2 className="my-2 w-full text-left text-4xl font-bold">
+                    <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-sm">
                       {title}
                     </h2>
                   </Link>
@@ -54,12 +56,12 @@ const FeaturedProject = ({
                 <BulletList text={shortSum} bulletColor={"rgb(106 0 255)"} />
               </div>
             </div>
-            <div className="w-1/2 h-auto rounded-lg overflow-hidden">
+            <div className="w-1/2 h-full rounded-lg overflow-hidden justify-center self-center">
               {link === "" ? (
                 <Image
                   src={img}
                   alt={title}
-                  className="w-full h-[400px] object-contain rounded-lg overflow-hidden"
+                  className="w-full object-contain overflow-hidden"
                 />
               ) : (
                 <Link href={link} target="_blank">
@@ -67,7 +69,7 @@ const FeaturedProject = ({
                   <Image
                     src={img}
                     alt={title}
-                    className="w-full h-[400px] object-contain"
+                    className="w-full h-auto object-contain"
                   />
                 </Link>
               )}
@@ -76,10 +78,12 @@ const FeaturedProject = ({
         }
         backSide={
           <div className="items-center justify-center mr-2">
-            <span className="text-primary text-xl font-medium">{type}</span>
+            <span className="text-primary text-xl font-medium xs:text-base">
+              {type}
+            </span>
             {link === "" ? (
               <div className="hover:underline underline-offset-2 cursor-default">
-                <h2 className="my-2 w-full text-left text-4xl font-bold">
+                <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-base">
                   {title}
                 </h2>
               </div>
@@ -89,17 +93,19 @@ const FeaturedProject = ({
                 target="_blank"
                 href={link}
               >
-                <h2 className="my-2 w-full text-left text-4xl font-bold">
+                <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-base">
                   {title}
                 </h2>
               </Link>
             )}
-            <p className="my-2 font-medium" style={{ whiteSpace: "pre-line" }}>
+            <p
+              className="my-2 font-medium sm:text-sm"
+              style={{ whiteSpace: "pre-line" }}
+            >
               {summary}
             </p>
           </div>
         }
-        height={"h-[450px]"}
       />
     </article>
   );
@@ -115,23 +121,26 @@ const SmallProject = ({
   height,
 }) => {
   return (
-    <article className="w-full h-auto flex flex-col items-center justify-between p-5">
+    <article className="w-full p-5">
       <FlipCard
         frontSide={
-          <div>
-            <div className="w-full overflow-hidden rounded-lg">
+          <div className="flex flex-col">
+            {/* <div className="w-full h-full overflow-hidden rounded-lg self-center lg:w-1/2"> */}
+            <div className="w-1/2 h-full rounded-lg overflow-hidden self-center">
               <Image
                 src={img}
                 alt={title}
-                className="w-full h-48 object-contain"
+                className="w-full h-auto object-contain"
               />
             </div>
             <div className="w-full flex flex-col items-start justify-between mt-6">
-              <span className="text-primary text-xl font-medium">{topic}</span>
+              <span className="text-primary text-xl font-medium xs:text-base">
+                {topic}
+              </span>
               <div className="hover:underline underline-offset-2 cursor-default">
                 {link === "" ? (
                   <div className="hover:underline underline-offset-2 cursor-default">
-                    <h2 className="my-2 w-full text-left text-3xl font-bold">
+                    <h2 className="my-2 w-full text-left text-3xl font-bold xl:text-xl sm:text-sm">
                       {title}
                     </h2>
                   </div>
@@ -141,7 +150,7 @@ const SmallProject = ({
                     target="_blank"
                     href={link}
                   >
-                    <h2 className="my-2 w-full text-left text-3xl font-bold">
+                    <h2 className="my-2 w-full text-left text-3xl font-bold xl:text-xl sm:text-sm">
                       {title}
                     </h2>
                   </Link>
@@ -156,7 +165,7 @@ const SmallProject = ({
             <div className="hover:underline underline-offset-2 cursor-default">
               {link === "" ? (
                 <div className="hover:underline underline-offset-2 cursor-default">
-                  <h2 className="my-2 w-full text-left text-3xl font-bold">
+                  <h2 className="my-2 w-full text-left text-3xl font-bold sm:text-base">
                     {title}
                   </h2>
                 </div>
@@ -166,20 +175,20 @@ const SmallProject = ({
                   target="_blank"
                   href={link}
                 >
-                  <h2 className="my-2 w-full text-left text-3xl font-bold">
+                  <h2 className="my-2 w-full text-left text-3xl font-bold sm:text-base">
                     {title}
                   </h2>
                 </Link>
               )}
             </div>
-            <div className="scrollable-content overflow-y-auto">
-              <p className="font-medium" style={{ whiteSpace: "pre-line" }}>
-                {summary}
-              </p>
-            </div>
+            <p
+              className="font-medium sm:text-sm"
+              style={{ whiteSpace: "pre-line" }}
+            >
+              {summary}
+            </p>
           </div>
         }
-        height={height}
       />
     </article>
   );
@@ -188,13 +197,13 @@ const SmallProject = ({
 const TopProject = ({ title, children }) => {
   return (
     <div className="flex justify-center col-span-12">
-      <div className="col-span-12 flex-col flex w-11/12 items-center border-t-2 border-dark/50 pb-5">
-        <div className="text-3xl font-semibold w-full text-left text-primary my-4">
+      <div className="col-span-12 flex-col flex w-11/12 items-center border-t-2 border-dark/50 pb-5 xl:w-full">
+        <div className="text-3xl font-semibold w-full text-left text-primary my-4 lg:text-2xl md:text-xl sm:text-lg">
           {title}
         </div>
         <div className="items-start justify-evenly w-full flex flex-wrap">
           {children.map((child) => (
-            <div className="w-5/12 my-3" key={child.title}>
+            <div className="w-5/12 my-3 lg:w-full" key={child.title}>
               <SmallProject
                 img={child.img}
                 summary={child.summary}
@@ -202,7 +211,6 @@ const TopProject = ({ title, children }) => {
                 topic={title}
                 link={child.link}
                 shortSum={child.shortSum}
-                height={child.height}
               />
             </div>
           ))}
@@ -218,12 +226,12 @@ export default function Page() {
       <Layout className="pt-16 pb-10 overflow-hidden">
         <div
           className="text-5xl inline-block w-full text-transparent bg-gradient-to-r from-primDark to-dark bg-clip-text font-bold capitalize
-        lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+        lg:!text-4xl sm:mb-8 sm:!text-3xl xs:!text-2xl"
         >
           "The best way to predict the future is to create it." - Peter Drucker
         </div>
-        <div className="grid grid-cols-12 gap-12 mt-12 border-t-2 border-dark/50 pt-6">
-          <div className="col-span-12 h-full justify-center flex">
+        <div className="grid grid-cols-12 gap-12 mt-12 border-t-2 border-dark/50 pt-6 xl:gap-x-4 md:gap-y-24 lg:mt-6 md:mt-5 sm:mt-3 xs:mt-1">
+          <div className="col-span-12 justify-center flex items-center">
             <FeaturedProject
               title={"QualiMe"}
               shortSum={
@@ -261,7 +269,6 @@ export default function Page() {
                   "Model predictive control for demand flexibility of a residential building with multiple distributed energy resources",
                 link: "https://authors.elsevier.com/a/1iQIS1M7zHCQj7",
                 summary: `One of the major challenges with increasing penetration of renewable energy sources (e.g., solar and wind) is to maintain grid stability. Grid-interactive efficient buildings are regarded as a promising approach to advance the role buildings can play in energy system operations and planning. This paper evaluates the demand flexibility in a residential building located in Karlsruhe, Germany, incorporating multiple distributed energy resources, including a photovoltaic and battery system, an electric vehicle, an electric water heater and a heat pump. A multi-criteria optimization problem is formulated with model predictive control (MPC) for five cases of demand flexibility. The simulation results of five winter days show that the peak power during the peak periods can be reduced by 92%, 69%, 100%, and 100% for real-time pricing, demand limiting, load shedding, and load shifting, respectively. For the power tracking scenario, the MPC tracked the reference power profile successfully for 70% of the simulation time. Achieving demand flexibility does not necessarily cause an increase in energy costs.`,
-                height: "h-[660px]",
                 img: sciencePic,
                 shortSum: `Distributed energy resources include thermostatic loads, PV, battery, and electric vehicle. \nReal-time pricing, load shedding, shifting, and power tracking are considered. \nAn approach to maximize load sheaving and shifting is proposed. \nProviding demand flexibility does not necessarily increase energy cost.`,
               },
@@ -270,7 +277,6 @@ export default function Page() {
                   "Occupant-oriented economic model predictive control for demand response in buildings",
                 link: "https://www.researchgate.net/publication/361609964_Occupant-oriented_economic_model_predictive_control_for_demand_response_in_buildings",
                 summary: `The present paper develops an Economic Model Predictive Control (EMPC) framework to provide Demand-Response (DR) for supporting the power grid stability while also maintaining Occupants' Thermal Satisfaction (OTS) in buildings. Our controller combines economic and occupant-oriented aspects by simultaneously optimizing two conflicting control goals, namely grid stability and OTS in buildings. We represent grid stability with Grid Costs (GC) based on a real-world dynamic electricity price and OTS with a reference indoor temperature, respectively. In the literature, there exists no study about occupant-oriented DR where the Model Predictive Control (MPC) is based on Resistor-Capacitor (RC) models identified from real measurements that also includes an attendance schedule for DR. For this, the EMPC uses a grey-box thermal building model that is designed, identified, and validated with real-world measurement data. For evaluation, we compare the EMPC with a well-tuned conventional Proportional-Integral (PI) controller. The results show that the EMPC significantly outperforms the PI controller in terms of GC, while it respects OTS.`,
-                height: "h-[650px]",
                 img: sciencePic,
                 shortSum: `Distributed energy resources include thermostatic loads, PV, battery, and electric vehicle. \nReal-time pricing, load shedding, shifting, and power tracking are considered. \nAn approach to maximize load sheaving and shifting is proposed. \nProviding demand flexibility does not necessarily increase energy cost.`,
               },
@@ -286,7 +292,6 @@ export default function Page() {
                 \nEvery line of code feels like a small victory, and each connection teaches me something. Sure, having a lamp at my digital beck and call is handy, but what's truly rewarding is the learning process. It's about understanding how things work, tackling challenges, and feeling that sense of accomplishment.
                 \nNo doubt, having a smart lamp will make daily life a bit more futuristic, but this isn't just about lighting up a room; it's about shedding light on the world of home automation.`,
                 img: rpiLampPic,
-                height: "h-[550px]",
                 shortSum: `Raspberry Pi as Central Home Automation Component \nWeb Development \nBasic Server Hosting \nInnovative Integration and Satisfaction \nGained hands-on experience in IoT by connecting a physical device (lamp) to the digital world for remote control.`,
               },
               {
@@ -296,7 +301,6 @@ export default function Page() {
                 \nThis project is more than just a way to keep my plants happy; it's a chance to delve into the intricacies of sensor tech, irrigation systems, and maybe a bit of machine learning to make it even smarter. I'm diving into uncharted waters (quite literally) and enjoying every bit of it. Who knew combining dirt and code could be this exciting?
                 \nSo, while my plants thrive,  I'm exploring a new world of DIY smart home projects - one sensor, one water droplet at a time. Because, in my home, even the plants are part of the smart revolution!`,
                 img: rpiWater,
-                height: "h-[550px]",
                 shortSum: `Sensor Technology Implementation \nInnovative Problem-Solving \nMachine Learning Exploration \nInterdisciplinary Learning`,
               },
             ]}

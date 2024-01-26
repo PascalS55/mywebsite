@@ -5,7 +5,7 @@ import "./Logo.css";
 const Logo = ({ scrolled }) => {
   return (
     <div
-      className="flex items-center justify-center
+      className="flex self-center items-center justify-center
     transition-transform transform hover:scale-125 duration-700"
     >
       <Link

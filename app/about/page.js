@@ -17,7 +17,7 @@ export default function Page() {
       <Layout className="pt-16 z-10">
         <AnimatedText
           text={"Curiosity and Ingenuity!"}
-          className="mb-16 lg:!text-7xl md:text-6xl xs:text-4xl sm:mb-8"
+          className="mb-16 lg:!text-7xl md:!text-6xl xs:!text-4xl sm:mb-8"
         />
         <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
           <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">

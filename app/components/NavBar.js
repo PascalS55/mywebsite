@@ -82,7 +82,7 @@ const NavBar = () => {
   return (
     <>
       <header
-        className={`w-full px-32 py-8 font-medium flex items-center justify-between sticky top-0 z-20 lg:px-16 md:px-12 sm:px-8 
+        className={`w-full px-32 py-8 font-medium flex items-center justify-between sticky top-0 z-20 xl:px-24 lg:px-16 md:px-12 sm:px-8 
     ${
       scrolled ? "bg-dark scale-95 text-light rounded-md" : "bg-light text-dark"
     } transform transition-all duration-500`}
@@ -160,7 +160,7 @@ const NavBar = () => {
           </nav>
         </div>
 
-        <div className="absolute left-[50%]">
+        <div className="absolute left-1/2 -translate-x-1/2">
           <Logo scrolled={scrolled} />
         </div>
       </header>

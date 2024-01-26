@@ -15,28 +15,32 @@ const FlipCard = ({ frontSide, backSide, height }) => {
   };
 
   return (
-    <div
-      className={`w-full ${height} rounded-3xl cursor-pointer shadow-dark flex hover:bg-dark hover:text-light duration-500
-        border border-solid border-dark p-6 shadow-lg`}
+    <article
+      className={`w-full max-h-[80vh] rounded-3xl cursor-pointer shadow-dark flex hover:bg-dark hover:text-light duration-500
+      flip-card border border-solid border-dark p-6 shadow-lg overflow-x-hidden overflow-y-hidden`}
       onClick={flipCard}
     >
-      <div className="flip-card flex-1 w-full" onClick={flipCard}>
-        <motion.div
-          className="flip-card-inner h-full"
-          initial={false}
-          animate={{ rotateY: isFlipped ? 180 : 360 }}
-          transition={{ duration: 0.3, animationDirection: "normal" }}
-          onAnimationComplete={() => setIsAnimated(false)}
+      <motion.div
+        className="flip-card-inner h-auto flex-1"
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 360 }}
+        transition={{ duration: 0.3, animationDirection: "normal" }}
+        onAnimationComplete={() => setIsAnimated(false)}
+      >
+        <div
+          className="w-full h-full flex-col flip-card-front overflow-y-auto scrollbar-hidden"
+          style={{ maxHeight: "80vh" }}
         >
-          <div className="flip-card-front flex-1 w-full h-full overflow-y-auto">
-            {frontSide}
-          </div>
-          <div className="flip-card-back flex-1 w-full h-full overflow-y-auto">
-            {backSide}
-          </div>
-        </motion.div>
-      </div>
-    </div>
+          {frontSide}
+        </div>
+        <div
+          className="w-full h-full flex flip-card-back overflow-y-auto"
+          style={{ maxHeight: "80vh" }}
+        >
+          {backSide}
+        </div>
+      </motion.div>
+    </article>
   );
 };
 

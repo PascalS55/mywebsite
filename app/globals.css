@@ -18,14 +18,24 @@
   border-radius: 10px;
 }
 
+.scrollbar-hidden {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
 /* Flipping Card animation */
 .flip-card-container {
-  transition: transform 0.3s;
   backface-visibility: hidden;
 }
-.flip-card-container:hover {
-  transform: scale(1.025);
-}
+
 .flip-card {
   perspective: 2000px;
 }
@@ -35,9 +45,13 @@
   transform-style: preserve-3d;
 }
 
-.flip-card-front,
+.flip-card-front {
+  backface-visibility: hidden;
+}
+
 .flip-card-back {
   position: absolute;
+  top: 0;
   backface-visibility: hidden;
 }
 

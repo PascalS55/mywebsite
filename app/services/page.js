@@ -14,8 +14,8 @@ const Page = () => {
       <Layout className="pt-16 overflow-x-hidden">
         {/* Your page content */}
         <AnimatedText
-          text={"A helping hand for your needs!"}
-          className="mb-5"
+          text={"Crafting Your Online Identity!"}
+          className="mb-5 lg:!text-7xl md:!text-6xl xs:!text-4xl sm:mb-8"
         />
         <SlideIn direction="right" height="h-auto">
           <Service
