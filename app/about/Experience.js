@@ -63,7 +63,8 @@ const Experience = () => {
             time={"December - March 2023 & now since December 2023"}
             companyLink={"https://www.siemens.com/global/en.html"}
             work={
-              "Automation of testing procedure for an audioacustic vibration sensor"
+              "Development and testing of new sensor technologies" +
+              "\nImproving automation of systems and processes"
             }
             address={"Karlsruhe, Germany"}
           />
@@ -88,8 +89,12 @@ const Experience = () => {
             time={"Since November 2022"}
             companyLink={"https://apps.apple.com/be/app/qualime/id1668894822"}
             work={
-              "Development of an app to help you increase your productivty level and guide you to a better me." +
-              "\nFocus on self-improvement and valuable use of your time"
+              "Development of a mobile app" +
+              "\nCoding experiences using state-of-the-art frameworks and technologies" +
+              "\nFull stack development including UI/UX and basics in the backend" +
+              "\nConceptualization for a user-friendly interface Focus on self-improvement and valuable use of your time" +
+              "\nIncluding daily journaling and self-reflection methods" +
+              "\nIncrease your productivity level and give you a guided way to establish routines"
             }
             address={"Karlsruhe, Germany"}
           />

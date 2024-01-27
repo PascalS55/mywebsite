@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import qualimePic from "../../public/Images/mobile_app.png";
 import rpiLampPic from "../../public/Images/rpi_lamp.png";
-import rpiWater from "../../public/Images/rpi_water1_bg.png";
+import rpiWater from "../../public/Images/rpi_water3.png";
 import sciencePic from "../../public/Images/science.png";
 import websitePic from "../../public/Images/website2.png";
 import BulletList from "../components/BulletList/BulletList";
@@ -53,7 +53,11 @@ const FeaturedProject = ({
                 )}
               </div>
               <div className="my-2">
-                <BulletList text={shortSum} bulletColor={"rgb(106 0 255)"} />
+                <BulletList
+                  text={shortSum}
+                  bulletColor={"rgb(106 0 255)"}
+                  className={"!text-xl"}
+                />
               </div>
             </div>
             <div className="w-1/2 h-full rounded-lg overflow-hidden justify-center self-center">
@@ -235,7 +239,7 @@ export default function Page() {
             <FeaturedProject
               title={"QualiMe"}
               shortSum={
-                "UI/UX Desing \nBasic Backend \nSoftware Development and Teamwork"
+                "Software Development \nCreative Thinking and Custom Solutions \nUI/UX Desing \nBasic Backend Skills \nTeamwork"
               }
               summary={`Starting off an exciting journey of self-learning and collaboration, my roommate and I decided to venture into the world of app development, determined to master React, front-end development, and UI/UX design. The result of our efforts is the app "QualiMe."
               \nOur collaborative effort materialized into an app we proudly named QualiMe. The concept behind QualiMe is simple yet powerful - dedicating just a few minutes a day to holistic routines can significantly elevate one\'s energy levels. The app offers a diverse range of exercises across sports, health, sleep, nutrition, relaxation, and mindset, ensuring a comprehensive approach to well-being.
@@ -248,15 +252,13 @@ export default function Page() {
           </div>
           <div className="col-span-12 h-full justify-center flex">
             <FeaturedProject
-              title={"This Website"}
-              shortSum={
-                "UI/UX Desing \nDedication \nState of the Art Framework Development \nAnimation and Web Design"
-              }
-              summary={`Starting off an exciting journey of self-learning and collaboration, my roommate and I decided to venture into the world of app development, determined to master React, front-end development, and UI/UX design. The result of our efforts is the app "QualiMe."
-              \nOur collaborative effort materialized into an app we proudly named QualiMe. The concept behind QualiMe is simple yet powerful - dedicating just a few minutes a day to holistic routines can significantly elevate one\'s energy levels. The app offers a diverse range of exercises across sports, health, sleep, nutrition, relaxation, and mindset, ensuring a comprehensive approach to well-being.
-              \nQualiMe isn't just about providing routines; it's designed to cultivate habits. Motivating users to stay on track, the app delivers clear information about each routine and guides them through execution with concise texts and engaging graphics. Our aim is to empower users, allowing them to focus on what truly matters for an improved quality of life.
-              \nCurrently, we're in the midst of our business founding journey, eager to refine and expand Qualime further. Join us in this venture by downloading the app and taking the first step towards a more energized and fulfilling life. Your journey to a better quality of life begins now with QualiMe!`}
+              title={"My Website"}
               type={"Personal Project"}
+              shortSum={
+                "Hands-On Learning \nUI/UX Desing \nState of the Art Framework Development \nAnimation and Web Design \nUnderstanding Web Technologies"
+              }
+              summary={`Creating a personal website was a deliberate effort to gain hands-on experience in web development and showcase myself online. By coding, I crafted a space that showcases my skills and achievements while offering a user-friendly interface for visitors to learn more about me. This project presented an excellent opportunity to showcase my technical skills, design aesthetics, and dedication to continuous growth. 
+              \nInspired by my experience, I'm extending this service to help others create a professional online presence. Whether you are an individual, entrepreneur, or professional, I offer tailored website development services to assist you in presenting yourself or your business effectively in the digital realm. Let's collaborate to create a website aligning with your vision while standing out in the competitive online landscape.`}
               link={""}
               img={websitePic}
             />
@@ -278,7 +280,7 @@ export default function Page() {
                 link: "https://www.researchgate.net/publication/361609964_Occupant-oriented_economic_model_predictive_control_for_demand_response_in_buildings",
                 summary: `The present paper develops an Economic Model Predictive Control (EMPC) framework to provide Demand-Response (DR) for supporting the power grid stability while also maintaining Occupants' Thermal Satisfaction (OTS) in buildings. Our controller combines economic and occupant-oriented aspects by simultaneously optimizing two conflicting control goals, namely grid stability and OTS in buildings. We represent grid stability with Grid Costs (GC) based on a real-world dynamic electricity price and OTS with a reference indoor temperature, respectively. In the literature, there exists no study about occupant-oriented DR where the Model Predictive Control (MPC) is based on Resistor-Capacitor (RC) models identified from real measurements that also includes an attendance schedule for DR. For this, the EMPC uses a grey-box thermal building model that is designed, identified, and validated with real-world measurement data. For evaluation, we compare the EMPC with a well-tuned conventional Proportional-Integral (PI) controller. The results show that the EMPC significantly outperforms the PI controller in terms of GC, while it respects OTS.`,
                 img: sciencePic,
-                shortSum: `Distributed energy resources include thermostatic loads, PV, battery, and electric vehicle. \nReal-time pricing, load shedding, shifting, and power tracking are considered. \nAn approach to maximize load sheaving and shifting is proposed. \nProviding demand flexibility does not necessarily increase energy cost.`,
+                shortSum: `Develops EMPC framework for Demand-Response (DR) to balance power grid stability and occupants' thermal satisfaction (OTS) in buildings. \nSimultaneously optimizes conflicting goals of grid stability and OTS, integrating economic and occupant-oriented aspects. \nIntroduces occupant-oriented DR using MPC based on RC models identified from real measurements, including an attendance schedule for DR. \nEMPC outperforms conventional PI controller, demonstrating superior performance in GC while respecting OTS.`,
               },
             ]}
           />
@@ -292,16 +294,16 @@ export default function Page() {
                 \nEvery line of code feels like a small victory, and each connection teaches me something. Sure, having a lamp at my digital beck and call is handy, but what's truly rewarding is the learning process. It's about understanding how things work, tackling challenges, and feeling that sense of accomplishment.
                 \nNo doubt, having a smart lamp will make daily life a bit more futuristic, but this isn't just about lighting up a room; it's about shedding light on the world of home automation.`,
                 img: rpiLampPic,
-                shortSum: `Raspberry Pi as Central Home Automation Component \nWeb Development \nBasic Server Hosting \nInnovative Integration and Satisfaction \nGained hands-on experience in IoT by connecting a physical device (lamp) to the digital world for remote control.`,
+                shortSum: `Raspberry Pi as Central Home Automation Component \nWeb Development \nBasic Server Hosting \nInnovative Integration and Satisfaction \nGained hands-on experience in IoT to the digital world for remote control.`,
               },
               {
                 title: "Upcoming: Water System",
                 summary: `Venturing into my next DIY smart home project, and this time, it's all about keeping my leafy companions happy and hydrated! Picture this: a nifty water system for my plants that not only monitors their hydration levels but also springs into action, topping up their pots when needed.
                 \nThe idea sprouted from a desire to blend technology with a touch of greenery. Armed with sensors, my Raspberry Pi-powered system will keep a watchful eye on the water levels in each plant pot. When the thirst kicks in, it'll kick into action, ensuring my plants never experience a parched moment.
-                \nThis project is more than just a way to keep my plants happy; it's a chance to delve into the intricacies of sensor tech, irrigation systems, and maybe a bit of machine learning to make it even smarter. I'm diving into uncharted waters (quite literally) and enjoying every bit of it. Who knew combining dirt and code could be this exciting?
+                \nThis project is more than just a way to keep my plants happy; it's a chance to delve into the intricacies of sensor tech, irrigation systems. I'm diving into uncharted waters (quite literally) and enjoying every bit of it. Who knew combining dirt and code could be this exciting?
                 \nSo, while my plants thrive,  I'm exploring a new world of DIY smart home projects - one sensor, one water droplet at a time. Because, in my home, even the plants are part of the smart revolution!`,
                 img: rpiWater,
-                shortSum: `Sensor Technology Implementation \nInnovative Problem-Solving \nMachine Learning Exploration \nInterdisciplinary Learning`,
+                shortSum: `Sensor Technology Implementation \nInnovative Problem-Solving \nInterdisciplinary Learning`,
               },
             ]}
           />

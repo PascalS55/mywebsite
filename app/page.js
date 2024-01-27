@@ -1,11 +1,11 @@
 import { Inter } from "next/font/google";
-import Link from "next/link";
-import Layout from "./components/Layout";
 import Image from "next/image";
+import Link from "next/link";
 import profilePic from "../public/Images/mech_software2.png";
 import AnimatedText from "./components/AnimatedText";
-import { LinkArrow } from "./components/Icons";
 import HireMe from "./components/HireMe";
+import { LinkArrow } from "./components/Icons";
+import Layout from "./components/Layout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,9 +33,14 @@ export default function Home() {
                 className="!text-6xl text-left xl:!text-5xl lg:text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               />
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                As a skilled full stakc developer, I will make your wildest
-                dreams come true. Find out ebaut me, myself and I and I will
-                also come to bang your mom.
+                As a skilled engineer in the modern world, seamlessly
+                integrating traditional mechanical engineering with software
+                development reflects a dynamic evolution. Proficient in both
+                physical structures and software solutions, I offer a unique
+                strength — navigating the convergence of hardware and software
+                to foster innovation. Embracing adaptability, curiosity, and
+                perseverance, I strive to address contemporary challenges and
+                contribute to innovative solutions.
               </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
@@ -58,7 +63,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="border-4 border-solid border-dark my-10 p-4">
+          {/* <div className="border-4 border-solid border-dark my-10 p-4">
             <p>
               Short text about each project, bullet points Maybe image or
               drawing
@@ -71,7 +76,7 @@ export default function Home() {
                 Visit Project
               </Link>
             </div>
-          </div>
+          </div> */}
         </Layout>
         <HireMe />
       </main>

@@ -49,7 +49,18 @@ const Page = () => {
             <span className="font-bold w-32 md:w-24 sm:w-20 xs:w-16">
               Privacy Policy:
             </span>
-            <span className="ml-2">Link to Privacy Policy</span>
+            <span className="ml-2">
+              This Privacy Policy outlines how we handle personal information on
+              our German website. As we prioritize transparency and user
+              privacy, please be assured that we do not track any user data, use
+              cookies, or engage in any form of data collection through our
+              website. Our website is solely designed to display personal
+              information and offer services to our customers without any
+              intrusive data practices. We respect your privacy and are
+              committed to maintaining a secure and trustworthy online
+              environment. If you have any questions or concerns regarding our
+              privacy practices, please feel free to contact us.
+            </span>
           </div>
           <div className="h-[2px] my-8 w-full bg-dark/50" />
           <div className="flex">
