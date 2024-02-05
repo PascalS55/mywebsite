@@ -17,7 +17,7 @@ const FlipCard = ({ frontSide, backSide, height }) => {
   return (
     <article
       className={`w-full max-h-[80vh] rounded-3xl cursor-pointer shadow-dark flex hover:bg-dark hover:text-light duration-500
-      flip-card border border-solid border-dark p-6 shadow-lg overflow-x-hidden overflow-y-hidden`}
+      flip-card border border-solid border-dark p-6 shadow-lg overflow-x-hidden overflow-y-hidden group`}
       onClick={flipCard}
     >
       <motion.div

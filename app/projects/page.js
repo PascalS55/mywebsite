@@ -25,7 +25,7 @@ const FeaturedProject = ({
     <article className="w-3/5 xl:w-5/6 lg:w-full">
       <FlipCard
         frontSide={
-          <div className="flex lg:flex-col-reverse group">
+          <div className="flex lg:flex-col-reverse">
             <div
               className="w-1/2 flex flex-col self-start items-start justify-between pl-6
               lg:w-full lg:pl-0 lg:pt-6"
