@@ -54,7 +54,7 @@ export default function Home() {
                   <LinkArrow className={"w-6 ml-1"} />
                 </Link>
                 <Link
-                  href="mailto:pascals00@web.de"
+                  href="mailto:contact@pascalstrauch.de"
                   target="_blank"
                   className="ml-4 text-lg font-medium text-dark underline capitalize md:text-base"
                 >

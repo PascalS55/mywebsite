@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex items-center lg:py-2">
           Build by&nbsp;
           <Link
-            href={"mailto:pascals00@web.de"}
+            href={"mailto:contact@pascalstrauch.de"}
             target="_blank"
             className="underline underline-offset-2"
           >

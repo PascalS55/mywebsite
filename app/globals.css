@@ -47,12 +47,14 @@
 
 .flip-card-front {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden !important;
 }
 
 .flip-card-back {
   position: absolute;
   top: 0;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden !important;
 }
 
 .flip-card-back {
