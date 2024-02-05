@@ -130,7 +130,7 @@ const SmallProject = ({
     <article className="w-full p-5">
       <FlipCard
         frontSide={
-          <div className="flex flex-col group">
+          <div className="flex flex-col">
             {/* <div className="w-full h-full overflow-hidden rounded-lg self-center lg:w-1/2"> */}
             <div className="w-1/2 h-full rounded-lg overflow-hidden self-center">
               <Image
