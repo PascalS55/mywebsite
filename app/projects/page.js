@@ -25,13 +25,13 @@ const FeaturedProject = ({
     <article className="w-3/5 xl:w-5/6 lg:w-full">
       <FlipCard
         frontSide={
-          <div className="flex lg:flex-col-reverse">
+          <div className="flex lg:flex-col-reverse group">
             <div
               className="w-1/2 flex flex-col self-start items-start justify-between pl-6
               lg:w-full lg:pl-0 lg:pt-6"
             >
               <div>
-                <span className="text-primary text-xl font-medium xs:text-base">
+                <span className="text-primary text-xl font-bold xs:text-base">
                   {type}
                 </span>
                 {link === "" ? (
@@ -53,12 +53,14 @@ const FeaturedProject = ({
                 )}
               </div>
               <div className="my-2">
-                <BulletList
-                  text={shortSum}
-                  bulletColor={"rgb(106 0 255)"}
-                  className={"!text-xl"}
-                />
+                <BulletList text={shortSum} className={"!text-xl"} />
               </div>
+              <button
+                className="border-dark border-2 p-1.5 px-4 group-hover:text-light rounded-lg text-base font-semibold md:p-1 md:px-2 md:text-sm
+              group-hover:border-light align-baseline lg:self-center mt-5 lg:mt-1"
+              >
+                Click Me!
+              </button>
             </div>
             <div className="w-1/2 h-full rounded-lg overflow-hidden justify-center self-center">
               {link === "" ? (
@@ -82,7 +84,7 @@ const FeaturedProject = ({
         }
         backSide={
           <div className="items-center justify-center mr-2">
-            <span className="text-primary text-xl font-medium xs:text-base">
+            <span className="text-primary text-xl font-bold xs:text-base">
               {type}
             </span>
             {link === "" ? (
@@ -128,7 +130,7 @@ const SmallProject = ({
     <article className="w-full p-5">
       <FlipCard
         frontSide={
-          <div className="flex flex-col">
+          <div className="flex flex-col group">
             {/* <div className="w-full h-full overflow-hidden rounded-lg self-center lg:w-1/2"> */}
             <div className="w-1/2 h-full rounded-lg overflow-hidden self-center">
               <Image
@@ -138,7 +140,7 @@ const SmallProject = ({
               />
             </div>
             <div className="w-full flex flex-col items-start justify-between mt-6">
-              <span className="text-primary text-xl font-medium xs:text-base">
+              <span className="text-primary text-xl font-bold xs:text-base">
                 {topic}
               </span>
               <div className="hover:underline underline-offset-2 cursor-default">
@@ -161,6 +163,14 @@ const SmallProject = ({
                 )}
               </div>
               <BulletList bulletColor={"rgb(106 0 255)"} text={shortSum} />
+            </div>
+            <div className="self-center">
+              <button
+                className="border-dark border-2 p-1.5 px-4 group-hover:text-light rounded-lg text-base font-semibold md:p-1 md:px-2 md:text-sm
+              group-hover:border-light align-baseline"
+              >
+                Click Me!
+              </button>
             </div>
           </div>
         }
@@ -244,7 +254,7 @@ export default function Page() {
               summary={`Starting off an exciting journey of self-learning and collaboration, my roommate and I decided to venture into the world of app development, determined to master React, front-end development, and UI/UX design. The result of our efforts is the app "QualiMe."
               \nOur collaborative effort materialized into an app we proudly named QualiMe. The concept behind QualiMe is simple yet powerful - dedicating just a few minutes a day to holistic routines can significantly elevate one\'s energy levels. The app offers a diverse range of exercises across sports, health, sleep, nutrition, relaxation, and mindset, ensuring a comprehensive approach to well-being.
               \nQualiMe isn't just about providing routines; it's designed to cultivate habits. Motivating users to stay on track, the app delivers clear information about each routine and guides them through execution with concise texts and engaging graphics. Our aim is to empower users, allowing them to focus on what truly matters for an improved quality of life.
-              \nCurrently, we're in the midst of our business founding journey, eager to refine and expand Qualime further. Join us in this venture by downloading the app and taking the first step towards a more energized and fulfilling life. Your journey to a better quality of life begins now with QualiMe!`}
+              \nCurrently, we're in the process of establishing our business, eager to refine and expand Qualime further. Join us in this venture by downloading the app and taking the first step towards a more energized and fulfilling life. Your journey to a better quality of life begins now with QualiMe!`}
               type={"Team Project"}
               link={"https://apps.apple.com/be/app/qualime/id1668894822"}
               img={qualimePic}
@@ -289,19 +299,19 @@ export default function Page() {
             children={[
               {
                 title: "My Own Smart Lamp",
-                summary: `Embarking on the journey to make my home a bit smarter, I've chosen the trusty Raspberry Pi as my tech companion. For my first project, I'm diving into the world of home automation by making one of my lamps controllable through my phone and a custom website hosted on the Raspberry Pi.
-                \nImagine flipping the switch on my lamp not with a button, but with a tap on my phone or a click on a website I put together. Beyond the cool factor, this is my way of seamlessly blending tech into my daily life
-                \nEvery line of code feels like a small victory, and each connection teaches me something. Sure, having a lamp at my digital beck and call is handy, but what's truly rewarding is the learning process. It's about understanding how things work, tackling challenges, and feeling that sense of accomplishment.
-                \nNo doubt, having a smart lamp will make daily life a bit more futuristic, but this isn't just about lighting up a room; it's about shedding light on the world of home automation.`,
+                summary: `I've started working on making my home a bit smarter, and I've opted for the reliable Raspberry Pi as my tech tool. My initial project involves delving into home automation by enabling control of one of my lamps through my phone and a custom website hosted on the Raspberry Pi.
+                \nPicture not just flipping a switch on my lamp, but being able to do it with a simple tap on my phone or a click on a website I've created. More than just a cool feature, this is my way of smoothly incorporating technology into my daily routine.
+                \nWorking on the code for my smart lamp project feels like a series of small wins, and each new connection teaches me a thing or two. While having a lamp I can control from my phone is handy, the real satisfaction comes from the learning process — understanding how things operate, tackling problems, and feeling accomplished.
+                \nSure, having a smart lamp makes daily life a bit more high-tech, but it's not only about illuminating a room. It's an opportunity to dive into the world of home automation, pick up some insights, and see how things work in the real world.`,
                 img: rpiLampPic,
                 shortSum: `Raspberry Pi as Central Home Automation Component \nWeb Development \nBasic Server Hosting \nInnovative Integration and Satisfaction \nGained hands-on experience in IoT to the digital world for remote control.`,
               },
               {
                 title: "Upcoming: Water System",
-                summary: `Venturing into my next DIY smart home project, and this time, it's all about keeping my leafy companions happy and hydrated! Picture this: a nifty water system for my plants that not only monitors their hydration levels but also springs into action, topping up their pots when needed.
-                \nThe idea sprouted from a desire to blend technology with a touch of greenery. Armed with sensors, my Raspberry Pi-powered system will keep a watchful eye on the water levels in each plant pot. When the thirst kicks in, it'll kick into action, ensuring my plants never experience a parched moment.
-                \nThis project is more than just a way to keep my plants happy; it's a chance to delve into the intricacies of sensor tech, irrigation systems. I'm diving into uncharted waters (quite literally) and enjoying every bit of it. Who knew combining dirt and code could be this exciting?
-                \nSo, while my plants thrive,  I'm exploring a new world of DIY smart home projects - one sensor, one water droplet at a time. Because, in my home, even the plants are part of the smart revolution!`,
+                summary: `For my next home project I'm aiming to make sure my plants stay happy and well-watered. It's a simple water system that keeps an eye on their hydration levels and adds water when needed.
+                \nThe idea came from wanting to mix a bit of technology with some greenery. Using sensors, my Raspberry Pi setup checks the water levels in each plant pot and waters them when they're thirsty.
+                \nThis project is more than just about keeping my plants healthy; it's a chance to learn about sensors and irrigation systems. I'm stepping into unfamiliar territory and enjoying the process. Turns out, combining soil and code can be quite interesting.
+                \nWhile my plants benefit, I'm exploring a new side of DIY smart home projects - one step at a time. Even the plants are getting in on the smart home action in my place!`,
                 img: rpiWater,
                 shortSum: `Sensor Technology Implementation \nInnovative Problem-Solving \nInterdisciplinary Learning`,
               },

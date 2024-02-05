@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const BulletList = ({ text, bulletColor, className }) => {
+const BulletList = ({ text, bulletColor = "rgb(106 0 255)", className }) => {
   const paragraphs = text.split("\n").map((paragraph, index) => (
     <p key={index} className="mb-2 md:text-sm">
       <span className={`bullet ${className}`} style={{ color: bulletColor }}>
