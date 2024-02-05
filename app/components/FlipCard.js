@@ -28,9 +28,7 @@ const FlipCard = ({ frontSide, backSide, height }) => {
         onAnimationComplete={() => setIsAnimated(false)}
       >
         <div
-          className={`w-full h-full flex-col flip-card-front overflow-y-auto scrollbar-hidden ${
-            isFlipped ? "" : ""
-          }`}
+          className="w-full h-full flex-col flip-card-front overflow-y-auto scrollbar-hidden"
           style={{ maxHeight: "80vh" }}
         >
           {frontSide}
