@@ -21,7 +21,7 @@ const FlipCard = ({ frontSide, backSide, height }) => {
       onClick={flipCard}
     >
       <motion.div
-        className="flip-card-inner h-auto"
+        className="flip-card-inner h-auto w-full"
         style={{ backfaceVisibility: "hidden" }}
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 360 }}
