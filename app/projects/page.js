@@ -13,101 +13,71 @@ export const metadata = {
   title: "PS | Projects",
 };
 
-const FeaturedProject = ({
-  type,
-  title,
-  shortSum,
-  summary,
-  img,
-  link = "",
-}) => {
+const FeaturedProject = ({ type, title, shortSum, summary, img, link = "" }) => {
   return (
-    <article className="w-3/5 xl:w-5/6 lg:w-full">
+    <article className='w-3/5 xl:w-5/6 lg:w-full'>
       <FlipCard
         frontSide={
-          <div className="flex lg:flex-col-reverse">
+          <div className='flex lg:flex-col-reverse'>
             <div
-              className="w-1/2 flex flex-col self-start items-start justify-between pl-6
-              lg:w-full lg:pl-0 lg:pt-6"
+              className='w-1/2 flex flex-col self-start items-start justify-between pl-6
+              lg:w-full lg:pl-0 lg:pt-6'
             >
               <div>
-                <span className="text-primary text-xl font-bold xs:text-base">
-                  {type}
-                </span>
+                <span className='text-primary text-xl font-bold xs:text-base'>{type}</span>
                 {link === "" ? (
-                  <div className="hover:underline underline-offset-2 cursor-default">
-                    <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-sm">
-                      {title}
-                    </h2>
+                  <div className='hover:underline underline-offset-2 cursor-default'>
+                    <h2 className='my-2 w-full text-left text-4xl font-bold sm:text-sm'>{title}</h2>
                   </div>
                 ) : (
                   <Link
-                    className="hover:underline underline-offset-2 cursor-pointer"
-                    target="_blank"
+                    className='hover:underline underline-offset-2 cursor-pointer'
+                    target='_blank'
                     href={link}
                   >
-                    <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-sm">
-                      {title}
-                    </h2>
+                    <h2 className='my-2 w-full text-left text-4xl font-bold sm:text-sm'>{title}</h2>
                   </Link>
                 )}
               </div>
-              <div className="my-2">
+              <div className='my-2'>
                 <BulletList text={shortSum} className={"!text-xl"} />
               </div>
               <button
-                className="border-dark border-2 p-1.5 px-4 group-hover:text-light rounded-lg text-base font-semibold md:p-1 md:px-2 md:text-sm
-              group-hover:border-light align-baseline lg:self-center mt-5 lg:mt-1"
+                className='border-dark border-2 p-1.5 px-4 group-hover:text-light rounded-lg text-base font-semibold md:p-1 md:px-2 md:text-sm
+              group-hover:border-light align-baseline lg:self-center mt-5 lg:mt-1'
               >
                 Click Me!
               </button>
             </div>
-            <div className="w-1/2 h-full rounded-lg overflow-hidden justify-center self-center">
+            <div className='w-1/2 h-full rounded-lg overflow-hidden justify-center self-center'>
               {link === "" ? (
-                <Image
-                  src={img}
-                  alt={title}
-                  className="w-full object-contain overflow-hidden"
-                />
+                <Image src={img} alt={title} className='w-full object-contain overflow-hidden' />
               ) : (
-                <Link href={link} target="_blank">
+                <Link href={link} target='_blank'>
                   {/* change height to auto for real pics */}
-                  <Image
-                    src={img}
-                    alt={title}
-                    className="w-full h-auto object-contain"
-                  />
+                  <Image src={img} alt={title} className='w-full h-auto object-contain' />
                 </Link>
               )}
             </div>
           </div>
         }
         backSide={
-          <div className="items-center justify-center mr-2">
-            <span className="text-primary text-xl font-bold xs:text-base">
-              {type}
-            </span>
+          <div className='items-center justify-center mr-2'>
+            <span className='text-primary text-xl font-bold xs:text-base'>{type}</span>
             {link === "" ? (
-              <div className="hover:underline underline-offset-2 cursor-default">
-                <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-base">
-                  {title}
-                </h2>
+              <div className='hover:underline underline-offset-2 cursor-default'>
+                <h2 className='my-2 w-full text-left text-4xl font-bold sm:text-base'>{title}</h2>
               </div>
             ) : (
               <Link
-                className="hover:underline underline-offset-2 cursor-pointer"
-                target="_blank"
+                className='hover:underline underline-offset-2 cursor-pointer'
+                target='_blank'
                 href={link}
               >
-                <h2 className="my-2 w-full text-left text-4xl font-bold sm:text-base">
-                  {title}
-                </h2>
+                <h2 className='my-2 w-full text-left text-4xl font-bold sm:text-base'>{title}</h2>
               </Link>
             )}
-            <p
-              className="my-2 font-medium sm:text-sm"
-              style={{ whiteSpace: "pre-line" }}
-            >
+            <p className='my-2 font-medium sm:text-sm' style={{ whiteSpace: "pre-line" }}>
               {summary}
             </p>
           </div>
@@ -117,46 +87,32 @@ const FeaturedProject = ({
   );
 };
 
-const SmallProject = ({
-  title,
-  summary,
-  img,
-  topic,
-  link = "",
-  shortSum,
-  height,
-}) => {
+const SmallProject = ({ title, summary, img, topic, link = "", shortSum, height }) => {
   return (
-    <article className="w-full p-5">
+    <article className='w-full p-5'>
       <FlipCard
         frontSide={
-          <div className="flex flex-col">
+          <div className='flex flex-col'>
             {/* <div className="w-full h-full overflow-hidden rounded-lg self-center lg:w-1/2"> */}
-            <div className="w-1/2 h-full rounded-lg overflow-hidden self-center">
-              <Image
-                src={img}
-                alt={title}
-                className="w-full h-auto object-contain"
-              />
+            <div className='w-1/2 h-full rounded-lg overflow-hidden self-center'>
+              <Image src={img} alt={title} className='w-full h-auto object-contain' />
             </div>
-            <div className="w-full flex flex-col items-start justify-between mt-6">
-              <span className="text-primary text-xl font-bold xs:text-base">
-                {topic}
-              </span>
-              <div className="hover:underline underline-offset-2 cursor-default">
+            <div className='w-full flex flex-col items-start justify-between mt-6'>
+              <span className='text-primary text-xl font-bold xs:text-base'>{topic}</span>
+              <div className='hover:underline underline-offset-2 cursor-default'>
                 {link === "" ? (
-                  <div className="hover:underline underline-offset-2 cursor-default">
-                    <h2 className="my-2 w-full text-left text-3xl font-bold xl:text-xl sm:text-sm">
+                  <div className='hover:underline underline-offset-2 cursor-default'>
+                    <h2 className='my-2 w-full text-left text-3xl font-bold xl:text-xl sm:text-sm'>
                       {title}
                     </h2>
                   </div>
                 ) : (
                   <Link
-                    className="hover:underline underline-offset-2 cursor-pointer"
-                    target="_blank"
+                    className='hover:underline underline-offset-2 cursor-pointer'
+                    target='_blank'
                     href={link}
                   >
-                    <h2 className="my-2 w-full text-left text-3xl font-bold xl:text-xl sm:text-sm">
+                    <h2 className='my-2 w-full text-left text-3xl font-bold xl:text-xl sm:text-sm'>
                       {title}
                     </h2>
                   </Link>
@@ -164,10 +120,10 @@ const SmallProject = ({
               </div>
               <BulletList bulletColor={"rgb(106 0 255)"} text={shortSum} />
             </div>
-            <div className="self-center">
+            <div className='self-center'>
               <button
-                className="border-dark border-2 p-1.5 px-4 group-hover:text-light rounded-lg text-base font-semibold md:p-1 md:px-2 md:text-sm
-              group-hover:border-light align-baseline"
+                className='border-dark border-2 p-1.5 px-4 group-hover:text-light rounded-lg text-base font-semibold md:p-1 md:px-2 md:text-sm
+              group-hover:border-light align-baseline'
               >
                 Click Me!
               </button>
@@ -175,30 +131,23 @@ const SmallProject = ({
           </div>
         }
         backSide={
-          <div className="flex flex-col mr-2">
-            <div className="hover:underline underline-offset-2 cursor-default">
+          <div className='flex flex-col mr-2'>
+            <div className='hover:underline underline-offset-2 cursor-default'>
               {link === "" ? (
-                <div className="hover:underline underline-offset-2 cursor-default">
-                  <h2 className="my-2 w-full text-left text-3xl font-bold sm:text-base">
-                    {title}
-                  </h2>
+                <div className='hover:underline underline-offset-2 cursor-default'>
+                  <h2 className='my-2 w-full text-left text-3xl font-bold sm:text-base'>{title}</h2>
                 </div>
               ) : (
                 <Link
-                  className="hover:underline underline-offset-2 cursor-pointer"
-                  target="_blank"
+                  className='hover:underline underline-offset-2 cursor-pointer'
+                  target='_blank'
                   href={link}
                 >
-                  <h2 className="my-2 w-full text-left text-3xl font-bold sm:text-base">
-                    {title}
-                  </h2>
+                  <h2 className='my-2 w-full text-left text-3xl font-bold sm:text-base'>{title}</h2>
                 </Link>
               )}
             </div>
-            <p
-              className="font-medium sm:text-sm"
-              style={{ whiteSpace: "pre-line" }}
-            >
+            <p className='font-medium sm:text-sm' style={{ whiteSpace: "pre-line" }}>
               {summary}
             </p>
           </div>
@@ -210,14 +159,14 @@ const SmallProject = ({
 
 const TopProject = ({ title, children }) => {
   return (
-    <div className="flex justify-center col-span-12">
-      <div className="col-span-12 flex-col flex w-11/12 items-center border-t-2 border-dark/50 pb-5 xl:w-full">
-        <div className="text-3xl font-semibold w-full text-left text-primary my-4 lg:text-2xl md:text-xl sm:text-lg">
+    <div className='flex justify-center col-span-12'>
+      <div className='col-span-12 flex-col flex w-11/12 items-center border-t-2 border-dark/50 pb-5 xl:w-full'>
+        <div className='text-3xl font-semibold w-full text-left text-primary my-4 lg:text-2xl md:text-xl sm:text-lg'>
           {title}
         </div>
-        <div className="items-start justify-evenly w-full flex flex-wrap">
+        <div className='items-start justify-evenly w-full flex flex-wrap'>
           {children.map((child) => (
-            <div className="w-5/12 my-3 lg:w-full" key={child.title}>
+            <div className='w-5/12 my-3 lg:w-full' key={child.title}>
               <SmallProject
                 img={child.img}
                 summary={child.summary}
@@ -236,16 +185,16 @@ const TopProject = ({ title, children }) => {
 
 export default function Page() {
   return (
-    <main className="w-full mb-16 flex flex-col items-center justify-center">
-      <Layout className="pt-16 pb-10 overflow-hidden">
+    <main className='w-full mb-16 flex flex-col items-center justify-center'>
+      <Layout className='pt-16 pb-10 overflow-hidden'>
         <div
-          className="text-5xl inline-block w-full text-transparent bg-gradient-to-r from-primDark to-dark bg-clip-text font-bold capitalize
-        lg:!text-4xl sm:mb-8 sm:!text-3xl xs:!text-2xl"
+          className='text-5xl inline-block w-full text-transparent bg-gradient-to-r from-primDark to-dark bg-clip-text font-bold capitalize
+        lg:!text-4xl sm:mb-8 sm:!text-3xl xs:!text-2xl'
         >
           "The best way to predict the future is to create it." - Peter Drucker
         </div>
-        <div className="grid grid-cols-12 gap-12 mt-12 border-t-2 border-dark/50 pt-6 xl:gap-x-4 md:gap-y-24 lg:mt-6 md:mt-5 sm:mt-3 xs:mt-1">
-          <div className="col-span-12 justify-center flex items-center">
+        <div className='grid grid-cols-12 gap-12 mt-12 border-t-2 border-dark/50 pt-6 xl:gap-x-4 md:gap-y-24 lg:mt-6 md:mt-5 sm:mt-3 xs:mt-1'>
+          <div className='col-span-12 justify-center flex items-center'>
             <FeaturedProject
               title={"QualiMe"}
               shortSum={
@@ -260,7 +209,7 @@ export default function Page() {
               img={qualimePic}
             />
           </div>
-          <div className="col-span-12 h-full justify-center flex">
+          <div className='col-span-12 h-full justify-center flex'>
             <FeaturedProject
               title={"My Website"}
               type={"Personal Project"}
@@ -279,7 +228,7 @@ export default function Page() {
               {
                 title:
                   "Model predictive control for demand flexibility of a residential building with multiple distributed energy resources",
-                link: "https://authors.elsevier.com/a/1iQIS1M7zHCQj7",
+                link: "https://www.sciencedirect.com/science/article/abs/pii/S0378778823011143",
                 summary: `One of the major challenges with increasing penetration of renewable energy sources (e.g., solar and wind) is to maintain grid stability. Grid-interactive efficient buildings are regarded as a promising approach to advance the role buildings can play in energy system operations and planning. This paper evaluates the demand flexibility in a residential building located in Karlsruhe, Germany, incorporating multiple distributed energy resources, including a photovoltaic and battery system, an electric vehicle, an electric water heater and a heat pump. A multi-criteria optimization problem is formulated with model predictive control (MPC) for five cases of demand flexibility. The simulation results of five winter days show that the peak power during the peak periods can be reduced by 92%, 69%, 100%, and 100% for real-time pricing, demand limiting, load shedding, and load shifting, respectively. For the power tracking scenario, the MPC tracked the reference power profile successfully for 70% of the simulation time. Achieving demand flexibility does not necessarily cause an increase in energy costs.`,
                 img: sciencePic,
                 shortSum: `Distributed energy resources include thermostatic loads, PV, battery, and electric vehicle. \nReal-time pricing, load shedding, shifting, and power tracking are considered. \nAn approach to maximize load sheaving and shifting is proposed. \nProviding demand flexibility does not necessarily increase energy cost.`,
